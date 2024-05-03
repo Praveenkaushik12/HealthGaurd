@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <h1 class="alert alert-danger text-center mt-3">Doctor Dashboard</h1>
+
+    {% if patient_data %}
+        <h3></h3>
+        <h3 class="alert alert-info text-center">Accepted Patients and Their Medical Data:</h3>
+        <div class="row text-center">
+            {% for patient, records in patient_data.items %}
+                <div class="col-md-12 mb-4">
+                    <ul>
+
+                        <li>{{ patient.user.username }}'s Records-<a href="{% url 'show_report' patient.user.username %}">Show Report</a></li>
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No patients or data available.</p>
+    {% endif %}
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <h1 class="alert alert-danger text-center mt-3">{{user}}'s Records</h1>
+
+    {% if records %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        {% for record in records %}
+                            <li class="list-group-item">
+                                <strong>Condition:</strong> {{ record.condition }}<br>
+                                <strong>Diagnosis Date:</strong> {{ record.date_of_diag }}<br>
+                                <strong>Treatments:</strong> {{ record.treatments }}<br>
+                                <strong>Additional Info:</strong> {{ record.add_info }}
+                                {% if record.report %}
+                                    <a href="{{ record.report.url }}" class="btn btn-primary">Download Report</a>
+                                {% else %}
+                                    <p>No medical report available.</p>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>No medical records available for this patient.</p>
+    {% endif %}
+{% endblock %}
+
