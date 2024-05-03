@@ -1,29 +1,44 @@
 {% extends 'myapp/base.html' %}
 {% block content %}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h2 class="text-center mb-4">Contact Us</h2>
-                <p class="text-center">Have a question or feedback? Fill out the form below, and we'll get back to you as soon as possible.</p>
-                <form action="#" method="post">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-            </div>
+  <!-- contact section -->
+  <section class="contact_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Get In Touch
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <div class="form_container">
+            <form action="">
+              <div>
+                <input type="text" placeholder="Full Name" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div>
+                <input type="text" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="btn_box">
+                <button>
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="images/contact-img.jpg" alt="">
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+  <!-- end contact section -->
 {% endblock content %}

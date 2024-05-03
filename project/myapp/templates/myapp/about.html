@@ -1,52 +1,30 @@
 {% extends 'myapp/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h2 class="text-center mt-5 mb-4">Improving Patient-Doctor Communication Through Medical History</h2>
-                <p class="lead">
-                    Welcome to our platform! We believe that effective communication between patients and doctors is crucial for providing quality healthcare. By leveraging the patient's medical history, we aim to enhance this communication and improve overall patient care.
-                </p>
-                <hr>
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <img src="{% static 'myapp/images/doctor_patient.jpg' %}" class="img-fluid rounded" alt="Doctor and Patient">
-                    </div>
-                    <div class="col-md-6">
-                        <h3>Understanding the Importance of Medical History</h3>
-                        <p>
-                            A patient's medical history provides valuable insights into their health status, past illnesses, medications, allergies, and more. By having access to comprehensive medical records, doctors can make more informed decisions about diagnosis, treatment plans, and ongoing care.
-                        </p>
-                        <p>
-                            Moreover, patients who actively participate in discussions about their medical history feel more empowered and engaged in their healthcare journey. This collaborative approach fosters trust between patients and doctors and leads to better health outcomes.
-                        </p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <h3>Our Platform's Approach</h3>
-                        <p>
-                            Our platform facilitates seamless communication between patients and doctors by centralizing medical records and enabling secure data sharing. Patients can easily input and update their medical history, while doctors can access this information in real-time during consultations.
-                        </p>
-                        <p>
-                            Through our platform, patients can communicate their concerns, symptoms, and preferences more effectively, allowing doctors to tailor treatment plans to individual needs. This personalized approach leads to greater patient satisfaction and improved health outcomes.
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{% static 'myapp/images/medical_records.jpg' %}" class="img-fluid rounded" alt="Medical Records">
-                    </div>
-                </div>
-                <hr>
-                <div class="text-center mt-5">
-                    <h3>Get Started Today!</h3>
-                    <p>
-                        Ready to experience the benefits of improved patient-doctor communication? Sign up for an account and start managing your medical history more effectively. Together, we can achieve better health outcomes and enhance the quality of healthcare delivery.
-                    </p>
-                    <a href="{% url 'register' %}" class="btn btn-primary btn-lg">Sign Up Now</a>
-                </div>
-            </div>
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="images/about-img.jpg" alt="">
+          </div>
         </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About <span>Hospital</span>
+              </h2>
+            </div>
+            <p>
+              has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 {% endblock content %}

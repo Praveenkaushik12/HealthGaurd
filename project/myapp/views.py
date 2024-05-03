@@ -126,7 +126,7 @@ def patient_dashboard(request):
                     messages.success(request, "Medical report uploaded successfully!")
                     # Redirect to the same view to clear the form
                     return redirect('patient_dashboard')
-                    # return render(request,'myapp/submission.html')
+                   
                 except Exception as e:
                     # Handle parsing or saving error
                     error_message = "An error occurred while processing the report."
