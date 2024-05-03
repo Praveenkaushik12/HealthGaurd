@@ -1,8 +1,56 @@
 {% extends 'myapp/base.html' %}
-
+{% load static %}
 {% block content %}
-    <div class="text-center my-5 text-bold">
-    <h4>Welcome to HealthGaurd!</h4>
+    <style>
+        .carousel-item img {
+            max-height: 400px; /* Adjust the max-height value as needed */
+            object-fit: cover; /* Ensure images cover the entire carousel area */
+        }
+    </style>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'myapp/images/slide1.jpg' %}" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Welcome to Our Platform</h5>
+                    <p>Experience the benefits of improved patient-doctor communication.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'myapp/images/slide2.jpeg' %}" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Empowering Patients</h5>
+                    <p>Take control of your health with easy access to your medical history.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'myapp/images/slide3.jpg' %}" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Enhancing Doctor-Patient Relationships</h5>
+                    <p>Build trust and collaborate effectively for better health outcomes.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+
+    <div class="container text-center mt-5">
+        <h2 class="mb-4">Learn More About Us</h2>
+        <p class="lead ">Our project aims to revolutionize the way patients and doctors communicate and collaborate by leveraging the power of technology. We provide a platform where patients can securely store and manage their medical history, making it easily accessible to healthcare providers.</p>
+        <a href="{% url 'about' %}" class="btn btn-primary">About Us</a>
+        <!-- Add additional content sections here -->
     </div>
 {% endblock content %}
-    

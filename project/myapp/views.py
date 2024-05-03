@@ -81,6 +81,11 @@ def home(request):
 def register(request):
     return render(request,'myapp/register.html')
 
+def about(request):
+    return render(request,'myapp/about.html')
+
+def contact(request):
+    return render(request,'myapp/contact.html')
 # def doctor_dashboard(request):
 #     if request.user.is_authenticated and hasattr(request.user, 'doctor'):
 #         # Fetch accepted requests

@@ -30,6 +30,9 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('logout/',views.user_logout,name="logout"),
     path('register/', views.register, name='register'),
+    path('about/',views.about,name="about"),
+    path('contact/',views.contact,name="contact"),
+    
     path('doctor/dashboard/',views.doctor_dashboard,name='doctor_dashboard'),
     path('patient/dashboard/',views.patient_dashboard,name='patient_dashboard'),
     path('data/<int:id>',views.get_medical_data,name='get_medical_data'),
