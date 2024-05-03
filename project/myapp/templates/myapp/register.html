@@ -1,14 +1,28 @@
 {% extends "myapp/base.html" %}
-
-
-
+{% load static  %}
 {% block content %}
     <div class="container">
         <div class="row my-5 text-center">
-            <h4>Register as:</h4>
-            <div class="col-sm-12">
-                <a href="{% url 'register_doctor' %}" class="text-decoration-none">Doctor</a>
-                <a href="{% url 'register_patient' %}" class="text-decoration-none">Patient</a>   
+            <h4 class="w-100" style="font-family: Arial, sans-serif; color: #333;">Register as:</h4>
+            <div class="row justify-content-around">
+                <div class="col-sm-6">
+                    <div class="card mx-auto mb-3" style="width: 18rem;">
+                        <img src="{% static 'myapp/images/doctor2.jpg' %}" class="card-img-top img-fluid" alt="Doctor Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Doctor</h5>
+                            <a href="{% url 'register_doctor' %}" class="btn btn-outline-success btn-sm btn-rounded">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card mx-auto mb-3" style="width: 18rem;">
+                        <img src="{% static 'myapp/images/patient.jpg' %}" class="card-img-top img-fluid" alt="Patient Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Patient</h5>
+                            <a href="{% url 'register_patient' %}" class="btn btn-outline-success btn-sm btn-rounded">Register</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

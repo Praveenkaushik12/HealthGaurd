@@ -1,38 +1,62 @@
 {% extends "myapp/base.html" %}
 
 {% block content %}
-<div class="container">
-  <div class="row my-3">
-    <div class="col-sm-12 text-center">
-      <h2>Login</h2>
-      {% if invalid_creds %}
-        <p>Invalid username or password. Please try again.</p>
-      {% endif %}
-      <form method="post" class="shadow p-5" novalidate>
-        {% csrf_token %}
-        
-        {% for fm in form %}
-          <div class="form-group my-3">
-            {{fm.label_tag}}{{fm}}<small class="text-warning">{{fm.errors|striptags}}</small>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+            {% if invalid_creds %}
+            <p class="alert alert-danger mb-3">Invalid username or password. Please try again.</p>
+            {% endif %}
+            <p class="text-white-50 mb-5">Please enter your login and password!</p>
+            <form method="post" novalidate>
+              {% csrf_token %}
+              <div>
+                {% for error in form.username.errors %}
+                <div class="invalid-feedback">
+                  {{ error }}
+                </div>
+                {% endfor %}
+                {% for fm in form %}
+                <div class="form-group mb-4">
+                  <label class="form-label">{{fm.label_tag}}</label>
+                  <div class="d-inline">
+                      {{fm}}
+                      <small class="text-warning">{{fm.errors|striptags}}</small>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              {% for error in form.password.errors %}
+              <div class="invalid-feedback">
+                {{ error }}
+              </div>
+              {% endfor %}
+              <button type="submit" class="btn btn-outline-light btn-sm px-4">
+                Login
+              </button>
+              {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                  <p class="alert alert-danger my-3">{{error}}</p>
+                {% endfor %}
+              {% endif %}
+            </form>
+            <p class="small mt-3">
+              <a href="#!" class="text-white">Forgot password?</a>
+            </p>
+            <div>
+              <p class="mb-0">
+                Don't have an account?
+                <a href="{% url 'register' %}" class="text-white-50 fw-bold">Sign Up</a>
+              </p>
+            </div>
           </div>
-        {% endfor %}
-        <button type="submit" class="btn btn-primary my-2">Login</button>
-        {% comment %} <a href="{% url 'register' %}" class="text-decoration-none text-muted">Create Account</a> {% endcomment %}
-        <div class="text-center text-primary fw-bold"><small>New to HealthGaurd ? <a href="{% url 'register' %}"
-          class="text-danger">Create an Account</a> </small></div>
-
-        
-        {% if form.non_field_errors %}
-          
-          {% for error in form.non_field_errors %}
-            <p class="alert alert-danger my-3">{{error}}</p>
-          {% endfor %}
-            
-        {% endif %}
-          
-      </form> 
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
+</section>
 {% endblock %}
