@@ -82,7 +82,7 @@ DATABASES = {
 }
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    # os.path.join(BASE_DIR, 'static'),
     # Add more directories if needed
 ]
 

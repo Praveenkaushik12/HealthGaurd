@@ -86,13 +86,10 @@ def about(request):
 
 def contact(request):
     return render(request,'myapp/contact.html')
-# def doctor_dashboard(request):
-#     if request.user.is_authenticated and hasattr(request.user, 'doctor'):
-#         # Fetch accepted requests
-#         accepted_requests = Request.objects.filter(receiver=request.user.doctor, status='Accepted')
-#         return render(request, 'myapp/doctor_dashboard.html', {'accepted_requests': accepted_requests})
-#     else:
-#         return HttpResponseRedirect('/login/')
+
+def submission(request):
+    return render(request,'myapp/submission.html')
+
 
 def doctor_dashboard(request):
     if request.user.is_authenticated:
@@ -126,9 +123,10 @@ def patient_dashboard(request):
                 try:
                     parsed_text = parse_pdf(pdf_file)
                     save_to_txt(parsed_text)
-                    messages.success(request,"Medical report uploaded successfully!")
+                    messages.success(request, "Medical report uploaded successfully!")
                     # Redirect to the same view to clear the form
-                    return redirect('patient_dashboard')  # Use named URL pattern if defined
+                    return redirect('patient_dashboard')
+                    # return render(request,'myapp/submission.html')
                 except Exception as e:
                     # Handle parsing or saving error
                     error_message = "An error occurred while processing the report."
@@ -143,9 +141,7 @@ def patient_dashboard(request):
 #patient's panel  
 def get_medical_data(request: HttpRequest, id: int) -> HttpResponse:
     med = get_object_or_404(MedicalData, pk=id)
-    return render(request, 'myapp/data_show.html', {'med_data': med})
-
-
+    return render(request, 'myapp/patient_data.html', {'med_data': med})
 
 #doctor's panel
 def show_report(request, username):

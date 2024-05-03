@@ -15,7 +15,7 @@
                                 <strong>Treatments:</strong> {{ record.treatments }}<br>
                                 <strong>Additional Info:</strong> {{ record.add_info }}
                                 {% if record.report %}
-                                    <a href="{{ record.report.url }}" class="btn btn-primary">Download Report</a>
+                                    <a href="{{ record.report.url }}" class="btn btn-primary mt-2">Download Report</a>
                                 {% else %}
                                     <p>No medical report available.</p>
                                 {% endif %}
@@ -26,7 +26,8 @@
             </div>
         </div>
     {% else %}
-        <p>No medical records available for this patient.</p>
+        <p class="text-center mt-3">No medical records available for this patient.</p>
     {% endif %}
 {% endblock %}
+
 

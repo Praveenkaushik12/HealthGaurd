@@ -4,20 +4,23 @@
     <h1 class="alert alert-danger text-center mt-3">Doctor Dashboard</h1>
 
     {% if patient_data %}
-        <h3></h3>
-        <h3 class="alert alert-info text-center">Accepted Patients and Their Medical Data:</h3>
-        <div class="row text-center">
-            {% for patient, records in patient_data.items %}
-                <div class="col-md-12 mb-4">
-                    <ul>
-
-                        <li>{{ patient.user.username }}'s Records-<a href="{% url 'show_report' patient.user.username %}">Show Report</a></li>
-                    </ul>
-                </div>
-            {% endfor %}
+        <h3 class="alert alert-info text-center mt-4">Accepted Patients and Their Medical Data:</h3>
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for patient, records in patient_data.items %}
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ patient.user.username }}'s Records</h5>
+                                <p class="card-text">Click <a href="{% url 'show_report' patient.user.username %}">here</a> to view the report.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     {% else %}
-        <p>No patients or data available.</p>
+        <p class="text-center mt-4">No patients or data available.</p>
     {% endif %}
 {% endblock %}
 

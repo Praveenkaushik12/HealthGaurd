@@ -1,0 +1,22 @@
+<!-- show_data.html -->
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center alert alert-info mt-3">Medical Data Details</h2>
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>ID:</strong> {{ med_data.id }}</li>
+                    <li class="list-group-item"><strong>Condition:</strong> {{ med_data.condition }}</li>
+                    <li class="list-group-item"><strong>Date of Diagnosis:</strong> {{ med_data.date_of_diag }}</li>
+                    <li class="list-group-item"><strong>Report:</strong> <a href="{{ med_data.report.url }}" target="_blank">{{ med_data.report.name }}</a></li>
+                    <!-- Add other fields as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+    
+

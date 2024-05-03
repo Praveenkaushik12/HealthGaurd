@@ -1,24 +1,23 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
-    <h1>View Requests</h1>
-    <ul>
+    <h1 class="alert alert-primary text-center mt-3">View Requests</h1>
+    <ul class="list-group">
         {% for request in requests %}
-            <li>
-                From: {{ request.sender.user.get_full_name }} <br>
-                Message: {{ request.message }} <br>
-                Status: {{ request.status }} <br>
+            <li class="list-group-item">
+                <strong>From:</strong> {{ request.sender.user.get_full_name }} <br>
+                <strong>Message:</strong> {{ request.message }} <br>
+                <strong>Status:</strong> {{ request.status }} <br>
                 {% if request.status == 'Pending' %}
                     <form method="POST" action="{% url 'manage_request' request.id %}">
                         {% csrf_token %}
-                        <button type="submit" name="action" value="accept">Accept</button>
-                        <button type="submit" name="action" value="reject">Reject</button>
+                        <button type="submit" name="action" value="accept" class="btn btn-success mr-2">Accept</button>
+                        <button type="submit" name="action" value="reject" class="btn btn-danger">Reject</button>
                     </form>
                 {% endif %}
             </li>
         {% empty %}
-            <li>No requests found</li>
+            <li class="list-group-item">No requests found</li>
         {% endfor %}
     </ul>
 {% endblock content %}
-    
