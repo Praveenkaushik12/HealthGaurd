@@ -1,12 +1,12 @@
 {% extends 'myapp/base.html' %}
-
+{% load myfilter %}
 {% block content %}
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-body text-center shadow p-5">
-                        <h2 class="card-title mb-4">Patient Registration</h2>
+                    <div class="card-body form_register shadow p-5">
+                        <h2 class="card-title text-center mb-4">Patient Registration</h2>
                         <form action="" method="POST" novalidate>
                             {% csrf_token %}
                             {% if form.non_field_errors %}
@@ -17,22 +17,23 @@
 
                             {% for fm in user_form %}
                                 <div class="form-group mb-3">
-                                    {{ fm.label_tag }}
-                                    {{ fm }}
-                                    <div> <small class="form-text text-warning">{{ fm.errors|striptags }}</small></div>
-                                   
+                                    <div class="d-inline">
+                                        {{ fm.label_tag }}{{ fm|add_class:"form-control" }}
+                                    </div>
+                                    <div><small class="form-text text-warning">{{ fm.errors|striptags }}</small></div>
                                 </div>
                             {% endfor %}
 
                             {% for fm in patient_form %}
                                 <div class="form-group mb-3">
-                                    {{ fm.label_tag }}
-                                    {{ fm }}
-                                    <div> <small class="form-text text-warning">{{ fm.errors|striptags }}</small></div>
+                                    <div class="d-inline">
+                                        {{ fm.label_tag }}{{ fm|add_class:"form-control" }}
+                                    </div>
+                                    <div><small class="form-text text-warning">{{ fm.errors|striptags }}</small></div>
                                 </div>
                             {% endfor %}
-
-                            <input type="submit" value="Submit" class="btn btn-primary btn-block mt-3">
+                            <div class="text-center"><input type="submit" value="Submit" class="btn btn-primary btn-block mt-3"></div>
+                            
                         </form>
                     </div>
                 </div>

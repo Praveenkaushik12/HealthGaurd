@@ -1,10 +1,9 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
-    <h1 class="alert alert-danger text-center mt-3">{{user}}'s Records</h1>
-
     {% if records %}
-        <div class="container">
+        <div class="container medical_data my-3">
+            <h2>{{user}}'s Records</h2>
             <div class="row">
                 <div class="col-md-12">
                     <ul class="list-group">
@@ -15,7 +14,7 @@
                                 <strong>Treatments:</strong> {{ record.treatments }}<br>
                                 <strong>Additional Info:</strong> {{ record.add_info }}
                                 {% if record.report %}
-                                    <a href="{{ record.report.url }}" class="btn btn-primary mt-2">Download Report</a>
+                                    <a href="{{ record.report.url }}" class="btn btn-success mt-2">Download Report</a>
                                 {% else %}
                                     <p>No medical report available.</p>
                                 {% endif %}

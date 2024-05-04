@@ -1,8 +1,10 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
-    <h1 class="alert alert-primary text-center mt-3">View Requests</h1>
+<div class="container medical_data my-3">
+    <h2>View Requests</h2>
     <ul class="list-group">
+        
         {% for request in requests %}
             <li class="list-group-item">
                 <strong>From:</strong> {{ request.sender.user.get_full_name }} <br>
@@ -20,4 +22,5 @@
             <li class="list-group-item">No requests found</li>
         {% endfor %}
     </ul>
+</div>
 {% endblock content %}

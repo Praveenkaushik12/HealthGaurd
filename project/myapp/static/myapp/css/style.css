@@ -1144,3 +1144,16 @@ body {
 .login_class{
   background-color: #8eeed179;
 }
+
+
+.form_register {
+  background-color: #8eeed179; /* Green background color */
+  padding: 20px; /* Adjust padding as needed */
+  text-align: left;
+}
+
+.border{
+  border: 2px #ccc solid;
+  border-radius: 5px;
+
+}

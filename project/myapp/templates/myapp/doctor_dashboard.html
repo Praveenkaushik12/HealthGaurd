@@ -1,11 +1,9 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
-    <h1 class="alert alert-danger text-center mt-3">Doctor Dashboard</h1>
-
     {% if patient_data %}
-        <h3 class="alert alert-info text-center mt-4">Accepted Patients and Their Medical Data:</h3>
-        <div class="container">
+        <div class="container medical_data my-3">
+            <h2>Accepted Patients and Their Medical Data:</h2>
             <div class="row justify-content-center">
                 {% for patient, records in patient_data.items %}
                     <div class="col-md-6">

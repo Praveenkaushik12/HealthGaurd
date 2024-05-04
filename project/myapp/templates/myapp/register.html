@@ -1,28 +1,21 @@
 {% extends "myapp/base.html" %}
 {% load static  %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/css/register.css' %}" />
+{% endblock %}
 {% block content %}
-    <div class="container">
-        <div class="row my-5 text-center">
-            <h4 class="w-100" style="font-family: Arial, sans-serif; color: #333;">Register as:</h4>
-            <div class="row justify-content-around">
-                <div class="col-sm-6">
-                    <div class="card mx-auto mb-3" style="width: 18rem;">
-                        <img src="{% static 'myapp/images/doctor2.jpg' %}" class="card-img-top img-fluid" alt="Doctor Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Doctor</h5>
-                            <a href="{% url 'register_doctor' %}" class="btn btn-outline-success btn-sm btn-rounded">Register</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card mx-auto mb-3" style="width: 18rem;">
-                        <img src="{% static 'myapp/images/patient.jpg' %}" class="card-img-top img-fluid" alt="Patient Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Patient</h5>
-                            <a href="{% url 'register_patient' %}" class="btn btn-outline-success btn-sm btn-rounded">Register</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="container_res">
+        <h1 class="form_register border text-center">Registration</h1>
+        <div class="registration-options">
+            <div class="registration-option">
+                <h2>Register as Doctor</h2>
+                <p>If you are a medical professional, you can register as a doctor to gain access to specialized features such as managing patient records, scheduling appointments, and prescribing medications.</p>
+                <a href="/register/doctor" class="btn btn-success">Register</a>
+            </div>
+            <div class="registration-option">
+                <h2>Register as Patient</h2>
+                <p>If you are seeking medical care, you can register as a patient to book appointments, access your medical history, and communicate securely with your healthcare providers.</p>
+                <a href="/register/patient" class="btn btn-success">Register</a>
             </div>
         </div>
     </div>

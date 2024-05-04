@@ -10,3 +10,7 @@ def is_in_group(user, group_name):
 @register.filter
 def already_requested(current_patient, doctor):
     return Request.objects.filter(sender=current_patient, receiver=doctor).exists()
+
+@register.filter
+def add_class(field, css):
+    return field.as_widget(attrs={"class": css})
