@@ -36,7 +36,7 @@
                 {% if history %}
                 {% for hist in history %}
                     <a href="{% url 'get_medical_data' id=hist.id %}">
-                        {{ hist.id }}: {{ hist.condition }} (Diagnosed on: {{ hist.date_of_diag }})
+                        {{ forloop.counter }}: {{ hist.condition }} (Diagnosed on: {{ hist.date_of_diag }})
                     </a>
                     <hr>
                 {% endfor %}
