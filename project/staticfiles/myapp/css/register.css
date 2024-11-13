@@ -1,0 +1,59 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+} */
+
+.container_res {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* h1 {
+    text-align: center;
+} */
+
+.registration-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.registration-option {
+    background-color: #fff;
+    border: 1px solid #002405;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0 10px;
+    width: 375px;
+}
+
+.registration-option h2 {
+    margin-top: 0;
+}
+
+.registration-option p {
+    margin-bottom: 20px;
+}
+
+/* .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+} */
+.border {
+    text-align: center;
+    border-radius: 10px; /* Adjust the value for the curvature */
+    border: 2px solid #ccc; /* Add a border for styling */
+    padding: 10px 20px; /* Add padding for spacing */
+}
