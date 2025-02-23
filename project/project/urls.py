@@ -36,6 +36,7 @@ urlpatterns = [
     path('doctor/dashboard/',views.doctor_dashboard,name='doctor_dashboard'),
     path('patient/dashboard/',views.patient_dashboard,name='patient_dashboard'),
     path('data/<int:id>',views.get_medical_data,name='get_medical_data'),
+    path('delete/<int:id>',views.delete_patient_medical_data,name='delete_patient_medical_data'),
     path('show_report/<str:username>/',views.show_report, name='show_report'),
     
      #new-Praveen

@@ -20,7 +20,7 @@
                                     {% for doctor in doctors %}
                                         <li class="list-group-item">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <span>{{ doctor.user.get_full_name }} - {{ doctor.specialization }}</span>
+                                                <span>{{ doctor.user}} - {{ doctor.specialization }}</span>
                                                 {% if current_patient|already_requested:doctor %}
                                                     <button type="button" class="btn btn-secondary" disabled>Sent</button>
                                                 {% else %}

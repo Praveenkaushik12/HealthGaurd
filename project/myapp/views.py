@@ -143,6 +143,13 @@ def get_medical_data(request: HttpRequest, id: int) -> HttpResponse:
     med = get_object_or_404(MedicalData, pk=id)
     return render(request, 'myapp/patient_data.html', {'med_data': med})
 
+#delete patient_medical_data
+def delete_patient_medical_data(request, id):
+    print("called delete_patient_medical_data")
+    med = get_object_or_404(MedicalData, pk=id)
+    med.delete()
+    return redirect('/patient/dashboard/')
+
 #doctor's panel
 def show_report(request, username):
     # Retrieve the medical records for the specified user
