@@ -35,3 +35,11 @@ class MedicalReport(forms.ModelForm):
             'date_of_diag':forms.DateInput(attrs={'class':'form-control','id':'datepicker'}),    
         }
         
+    
+    def clean_report(self):
+        report = self.cleaned_data.get('report')
+        if not report:
+            raise forms.ValidationError("Please add reports")
+        return report
+    
+        
